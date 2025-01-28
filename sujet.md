@@ -69,8 +69,112 @@ For further details, see the official [Apache Commons Collections issue tracker]
 -------------------------------------------------------------------------------------------------------------------------------------
 3. Netflix is famous, among other things we love, for the popularization of *Chaos Engineering*, a fault-tolerance verification technique. The company has implemented protocols to test their entire system in production by simulating faults such as a server shutdown. During these experiments they evaluate the system's capabilities of delivering content under different conditions. The technique was described in [a paper](https://arxiv.org/ftp/arxiv/papers/1702/1702.05843.pdf) published in 2016. Read the paper and briefly explain what are the concrete experiments they perform, what are the requirements for these experiments, what are the variables they observe and what are the main results they obtained. Is Netflix the only company performing these experiments? Speculate how these experiments could be carried in other organizations in terms of the kind of experiment that could be performed and the system variables to observe during the experiments.
 
+# Chaos Engineering: Netflix-Inspired Experiments
+
+This project explores Chaos Engineering principles inspired by Netflix's approach to improving system resilience and fault tolerance. Below is an overview of the experiments, requirements, variables observed, and results.
+
+## 🟢 Concrete Experiments
+
+Netflix performs the following experiments to test system resilience:
+
+- **Server Shutdowns**: Simulating the failure of individual servers or entire regions.
+- **Network Latency Injection**: Introducing artificial delays in network communication.
+- **Dependency Failures**: Disrupting dependencies like databases or caching systems.
+
+## 🟢 Requirements
+
+To conduct Chaos Engineering experiments effectively, the following are required:
+
+- **Monitoring Tools**: To observe system behavior during experiments.
+- **Automation**: To safely execute and roll back experiments.
+- **Redundancy**: To ensure no single point of failure.
+
+## 🟢 Variables Observed
+
+During experiments, the following variables are monitored:
+
+- **System Latency**: Response times under stress.
+- **Error Rates**: Frequency of failures or errors.
+- **Recovery Time**: Time taken to restore normal operations.
+
+## 🟢 Main Results
+
+Netflix found that Chaos Engineering significantly improved system resilience and fault tolerance, ensuring uninterrupted service even during unexpected failures.
+
+## 🟢 Other Companies
+
+Other tech giants like **Google**, **Amazon**, and **Microsoft** also perform similar experiments to enhance their system reliability.
+
+## 🟢 Speculation for Other Organizations
+
+For organizations looking to adopt Chaos Engineering, consider the following:
+
+- **Experiments**: Simulate database failures, network outages, or hardware malfunctions.
+- **Variables to Observe**: System uptime, user experience, and recovery efficiency.
+
+---
+
 4. [WebAssembly](https://webassembly.org/) has become the fourth official language supported by web browsers. The language was born from a joint effort of the major players in the Web. Its creators presented their design decisions and the formal specification in [a scientific paper](https://people.mpi-sws.org/~rossberg/papers/Haas,%20Rossberg,%20Schuff,%20Titzer,%20Gohman,%20Wagner,%20Zakai,%20Bastien,%20Holman%20-%20Bringing%20the%20Web%20up%20to%20Speed%20with%20WebAssembly.pdf) published in 2018. The goal of the language is to be a low level, safe and portable compilation target for the Web and other embedding environments. The authors say that it is the first industrial strength language designed with formal semantics from the start. This evidences the feasibility of constructive approaches in this area. Read the paper and explain what are the main advantages of having a formal specification for WebAssembly. In your opinion, does this mean that WebAssembly implementations should not be tested? 
+
+
+# WebAssembly Formal Specification
+
+This document outlines the advantages of a formal specification for WebAssembly (Wasm) and explains why testing remains essential even with a formal specification in place.
+
+## 🟢 Advantages of Formal Specification
+
+A formal specification for WebAssembly provides the following benefits:
+
+- **Precision**: Eliminates ambiguity in language design, ensuring clear and unambiguous rules for behavior.
+- **Interoperability**: Ensures consistent behavior across different implementations, enabling seamless integration across platforms.
+- **Security**: Reduces the risk of vulnerabilities caused by unclear or undefined semantics, making the system more robust.
+
+## 🟢 Testing Still Necessary
+
+Even with a formal specification, testing remains critical for the following reasons:
+
+- **Validate Implementations**: Testing ensures that implementations adhere to the formal specification.
+- **Identify Edge Cases**: Helps uncover edge cases and unexpected behaviors that may not be explicitly covered in the specification.
+- **Performance Issues**: Testing can reveal performance bottlenecks or inefficiencies in real-world scenarios.
+- **Real-World Compatibility**: Ensures that the implementation works as expected in practical, real-world use cases.
+
+---
 
 5.  Shortly after the appearance of WebAssembly another paper proposed a mechanized specification of the language using Isabelle. The paper can be consulted here: https://www.cl.cam.ac.uk/~caw77/papers/mechanising-and-verifying-the-webassembly-specification.pdf. This mechanized specification complements the first formalization attempt from the paper. According to the author of this second paper, what are the main advantages of the mechanized specification? Did it help improving the original formal specification of the language? What other artifacts were derived from this mechanized specification? How did the author verify the specification? Does this new specification removes the need for testing?
 
+# Mechanized Specification of WebAssembly
+
+This document outlines the advantages of a mechanized specification for WebAssembly (Wasm), the artifacts derived from it, and the importance of testing even with a mechanized specification in place.
+
+## 🟢 Advantages of Mechanized Specification
+
+A mechanized specification for WebAssembly provides the following benefits:
+
+- **Rigorous Verification**: Ensures the specification is free of contradictions and logically consistent.
+- **Automated Proofs**: Reduces human error in the verification process by leveraging automated tools.
+- **Improved Clarity**: Helps refine and clarify the original specification through formalization.
+
+## 🟢 Artifacts Derived
+
+From a mechanized specification, the following artifacts can be derived:
+
+- **Verified Compilers**: Tools that adhere to the mechanized specification, ensuring correctness by construction.
+- **Formal Proofs**: Mathematical guarantees of correctness for the specification and its implementations.
+
+## 🟢 Verification Process
+
+The mechanized specification of WebAssembly was verified using the **Isabelle proof assistant**, a powerful tool for formal verification. This process ensures that the specification is rigorously validated and free of errors.
+
+## 🟢 Testing Still Necessary
+
+While the mechanized specification provides strong guarantees, testing remains crucial for the following reasons:
+
+- **Real-World Validation**: Ensures that implementations work as expected in practical, real-world scenarios.
+- **Unforeseen Issues**: Helps identify and address edge cases or unexpected behaviors that may not be covered by the mechanized specification.
+- **Performance and Compatibility**: Validates performance and compatibility across different platforms and environments.
+
+---
+
 ## Answers
+
+
